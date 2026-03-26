@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/Program Files/**)",
-      "Read(//c/Users/axsal/AppData/Roaming/**)",
-      "Bash(npm install:*)"
-    ]
-  }
-}
