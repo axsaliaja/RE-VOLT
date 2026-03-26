@@ -5,7 +5,7 @@ Institut Teknologi Bandung
 
 ## Anggota Tim
 - Ketua: Raqinnaja Axsali
-- Anggota 1: Ridho Radifa Al-haq
+- Anggota 1: Ridho Radifa Al-Haq
 - Anggota 2: Daffa Naufal
   
 ## Deskripsi Karya
