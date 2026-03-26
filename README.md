@@ -1,4 +1,4 @@
-## Re-Volt
+# Re-Volt
 
 ## Institusi
 Institut Teknologi Bandung
