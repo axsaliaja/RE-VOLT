@@ -96,9 +96,9 @@ function SoHRing({ value, size = 52 }) {
   const offset = c - (value / 100) * c;
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="var(--surface-container-high)" strokeWidth="4"/>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth="4" strokeDasharray={c} strokeDashoffset={offset} strokeLinecap="round" style={{ transition: "stroke-dashoffset 1s ease" }}/>
-      <text x={size/2} y={size/2} textAnchor="middle" dominantBaseline="central" fill="var(--on-surface)" fontSize={size*0.22} fontWeight="700" style={{ transform: "rotate(90deg)", transformOrigin: "center" }}>{value}%</text>
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--surface-container-high)" strokeWidth="4" />
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={color} strokeWidth="4" strokeDasharray={c} strokeDashoffset={offset} strokeLinecap="round" style={{ transition: "stroke-dashoffset 1s ease" }} />
+      <text x={size / 2} y={size / 2} textAnchor="middle" dominantBaseline="central" fill="var(--on-surface)" fontSize={size * 0.22} fontWeight="700" style={{ transform: "rotate(90deg)", transformOrigin: "center" }}>{value}%</text>
     </svg>
   );
 }
@@ -109,7 +109,7 @@ function GlowBar({ value, max = 100, height = 6 }) {
   const color = value >= 85 ? "var(--primary-fixed-dim)" : value >= 70 ? "var(--accent-blue)" : "var(--accent-amber)";
   return (
     <div style={{ width: "100%", height, borderRadius: height, background: "var(--surface-container-high)", overflow: "hidden" }}>
-      <div style={{ width: `${pct}%`, height: "100%", borderRadius: height, background: color, boxShadow: `0 0 8px ${color}44`, transition: "width 1s ease" }}/>
+      <div style={{ width: `${pct}%`, height: "100%", borderRadius: height, background: color, boxShadow: `0 0 8px ${color}44`, transition: "width 1s ease" }} />
     </div>
   );
 }
@@ -148,7 +148,7 @@ function HeroBatteryVisual() {
 
           {/* Battery bars */}
           <div style={{ display: "flex", gap: 6, zIndex: 1 }}>
-            {[1,2,3,4].map(i => (
+            {[1, 2, 3, 4].map(i => (
               <div key={i} style={{ width: 28, height: 8 + i * 6, borderRadius: 4, background: i <= 3 ? "linear-gradient(135deg, var(--primary-container), var(--primary))" : "var(--surface-container-high)", boxShadow: i <= 3 ? "0 0 8px rgba(0,223,129,0.2)" : "none", transition: "all 0.3s ease" }} />
             ))}
           </div>
@@ -345,24 +345,21 @@ export default function App() {
             </div>
             <div>
               <h4 style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--on-surface-muted)", marginBottom: 20 }}>Platform</h4>
-              {[{l:"Marketplace",p:"marketplace"},{l:"Battery Checker",p:"checker"},{l:"Impact Dashboard",p:"impact"},{l:"Konten Edukasi",p:"konten"}].map(t => (
+              {[{ l: "Marketplace", p: "marketplace" }, { l: "Battery Checker", p: "checker" }, { l: "Impact Dashboard", p: "impact" }, { l: "Konten Edukasi", p: "konten" }].map(t => (
                 <p key={t.l} onClick={() => navigate(t.p)} style={{ color: "var(--on-surface-variant)", fontSize: 14, marginBottom: 12, cursor: "pointer", transition: "color 0.2s" }}>{t.l}</p>
               ))}
             </div>
             <div>
               <h4 style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--on-surface-muted)", marginBottom: 20 }}>Informasi</h4>
-              {[{l:"Tentang Kami",p:"about"},{l:"FAQ",p:"about"}].map(t => (
+              {[{ l: "Tentang Kami", p: "about" }, { l: "FAQ", p: "about" }].map(t => (
                 <p key={t.l} onClick={() => navigate(t.p)} style={{ color: "var(--on-surface-variant)", fontSize: 14, marginBottom: 12, cursor: "pointer", transition: "color 0.2s" }}>{t.l}</p>
               ))}
             </div>
             <div>
               <h4 style={{ fontSize: 11, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--on-surface-muted)", marginBottom: 20 }}>Kontak</h4>
               <p style={{ color: "var(--on-surface-variant)", fontSize: 14, marginBottom: 12 }}>hello@re-volt.id</p>
-              <p style={{ color: "var(--on-surface-variant)", fontSize: 14, marginBottom: 12 }}>+62 21 8888 9999</p>
+              <p style={{ color: "var(--on-surface-variant)", fontSize: 14, marginBottom: 12 }}>+62 815 4641 5808</p>
               <div style={{ display: "flex", gap: 8, marginTop: 16 }}>
-                {["Twitter", "LinkedIn", "Instagram"].map(s => (
-                  <span key={s} style={{ padding: "6px 14px", borderRadius: "var(--radius-full)", background: "var(--surface-container-lowest)", fontSize: 12, fontWeight: 500, color: "var(--on-surface-muted)", cursor: "pointer", boxShadow: "var(--shadow-sm)" }}>{s}</span>
-                ))}
               </div>
             </div>
           </div>
@@ -522,7 +519,7 @@ function AccountModal({ account, onClose, onRegister, onLogout }) {
                   Nama Lengkap *
                 </label>
                 <input className="input-field" placeholder="Masukkan nama lengkap" value={form.name}
-                  onChange={e => setForm({...form, name: e.target.value})}
+                  onChange={e => setForm({ ...form, name: e.target.value })}
                   style={errors.name ? { boxShadow: "0 0 0 2px var(--error)" } : {}}
                 />
                 {errors.name && <p style={{ fontSize: 12, color: "var(--error)", marginTop: 4 }}>{errors.name}</p>}
@@ -533,7 +530,7 @@ function AccountModal({ account, onClose, onRegister, onLogout }) {
                   Email *
                 </label>
                 <input className="input-field" type="email" placeholder="email@example.com" value={form.email}
-                  onChange={e => setForm({...form, email: e.target.value})}
+                  onChange={e => setForm({ ...form, email: e.target.value })}
                   style={errors.email ? { boxShadow: "0 0 0 2px var(--error)" } : {}}
                 />
                 {errors.email && <p style={{ fontSize: 12, color: "var(--error)", marginTop: 4 }}>{errors.email}</p>}
@@ -544,7 +541,7 @@ function AccountModal({ account, onClose, onRegister, onLogout }) {
                   No. Telepon
                 </label>
                 <input className="input-field" type="tel" placeholder="+62 812 3456 7890" value={form.phone}
-                  onChange={e => setForm({...form, phone: e.target.value})}
+                  onChange={e => setForm({ ...form, phone: e.target.value })}
                 />
               </div>
 
@@ -552,7 +549,7 @@ function AccountModal({ account, onClose, onRegister, onLogout }) {
                 <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--on-surface-muted)", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
                   Lokasi
                 </label>
-                <select className="input-field" value={form.location} onChange={e => setForm({...form, location: e.target.value})} style={{ cursor: "pointer" }}>
+                <select className="input-field" value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} style={{ cursor: "pointer" }}>
                   <option value="">Pilih kota</option>
                   <option value="Jakarta">Jakarta</option>
                   <option value="Surabaya">Surabaya</option>
@@ -1465,25 +1462,25 @@ function ContactPage() {
                   <Check size={32} color="var(--primary)" />
                 </div>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 500, marginBottom: 8 }}>Terkirim!</h3>
-                <p style={{ color: "var(--on-surface-variant)", fontSize: 14 }}>Kami akan merespons dalam 1-2 hari kerja.</p>
+                <p style={{ color: "var(--on-surface-variant)", fontSize: 14 }}>Terima kasih atas masukannya!</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--on-surface-muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Nama</label>
-                  <input className="input-field" placeholder="Nama lengkap" value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
+                  <input className="input-field" placeholder="Nama lengkap" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
                 </div>
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--on-surface-muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Email</label>
-                  <input className="input-field" type="email" placeholder="email@example.com" value={form.email} onChange={e => setForm({...form, email: e.target.value})} />
+                  <input className="input-field" type="email" placeholder="email@example.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
                 </div>
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--on-surface-muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Subjek</label>
-                  <input className="input-field" placeholder="Topik pesan" value={form.subject} onChange={e => setForm({...form, subject: e.target.value})} />
+                  <input className="input-field" placeholder="Topik pesan" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} />
                 </div>
                 <div style={{ marginBottom: 24 }}>
                   <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--on-surface-muted)", marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Pesan</label>
-                  <textarea className="input-field" rows={5} placeholder="Tulis pesan Anda..." value={form.message} onChange={e => setForm({...form, message: e.target.value})} style={{ resize: "vertical" }} />
+                  <textarea className="input-field" rows={5} placeholder="Tulis pesan Anda..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} style={{ resize: "vertical" }} />
                 </div>
                 <button className="btn-primary" type="submit" style={{ width: "100%", justifyContent: "center" }}>
                   Kirim Pesan <Send size={16} />
@@ -1496,7 +1493,7 @@ function ContactPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {[
               { icon: <Mail size={20} />, label: "Email", value: "hello@re-volt.id" },
-              { icon: <Phone size={20} />, label: "Telepon", value: "+62 21 8888 9999" },
+              { icon: <Phone size={20} />, label: "Telepon", value: "+62 815 4641 5808" },
               { icon: <MapPin size={20} />, label: "Lokasi", value: "Jakarta, Indonesia" },
               { icon: <Clock size={20} />, label: "Jam Operasional", value: "Senin - Jumat, 09:00 - 17:00 WIB" },
             ].map((c, i) => (
